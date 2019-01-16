@@ -64,7 +64,27 @@ function interactiveConsole() {
         }
         break;
       case parts[0] == "DEL":
+        if(parts[1]){
 
+          var name = parts[1];
+          var checkName = false;
+          var array = addModule.array;
+
+          for (var value in array) {
+            if (name == array[value].name) {
+              checkName = true;
+              array.splice(value,1);
+            }
+          } 
+
+          if(checkName == false){
+            console.log("Aquest personatge no ha sigut introduit previament");
+            interactiveConsole();
+          }else{
+            console.log("Personatge suprimit correctament");
+            interactiveConsole();
+          }
+        }
         break;
       case parts[0] == "EXIT":
         process.exit(0);
@@ -82,7 +102,8 @@ function printWelcomeMessage() {
   console.log(`Avaialble commands:
   LIST - shows all Caracters introduced
   ADD name power type - adds a new Character with one name, one power and one type
-	EXIT - Exits the program`);
+  DEL name - Removes the name introduced previously
+  EXIT - Exits the program`);
 }
 
 
