@@ -1,10 +1,14 @@
 {
   "name": "exercici-1",
   "version": "1.0.0",
-  "description": "",
+  "description": " this is the package of practice 1",
   "main": "calculator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanox2/practica.git"
   },
   "author": "joan",
   "license": "ISC",
