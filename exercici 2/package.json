@@ -1,0 +1,19 @@
+{
+  "name": "uf2-1_bogunyapiferrerjoan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lista.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanox2/practica.git"
+  },
+  "author": "joan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanox2/practica/issues"
+  },
+  "homepage": "https://github.com/joanox2/practica#readme"
+}
