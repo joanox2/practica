@@ -17,6 +17,7 @@ function interactiveConsole() {
   input(">> ", function (data) {
 
     var addModule = require("./addCharacter");
+    var extension = require("path");
     var SaveAndLoadModule = require("fs");
     var parts = data.trim().split(' ');
     if(parts[0]) parts[0] = parts[0].toUpperCase();
@@ -93,16 +94,20 @@ function interactiveConsole() {
           var filename = parts[1];
           var array = addModule.array;
 
-          SaveAndLoadModule.writeFile(filename,JSON.stringify(array),function(error)
-            {
-              if (error){
-                 console.log(error);
-              }else {
-                console.log("archiu creat correctament");
-                interactiveConsole();
+          if (extension.extname(filename) == ".json"){
+            SaveAndLoadModule.writeFile(filename, JSON.stringify(array), function (error) {
+                if (error) {
+                  console.log(error);
+               } else {
+                  console.log("archiu creat correctament");
+                  interactiveConsole();
+                }
               }
-            }
-          );
+            );
+          }else{
+            console.log("extensio incorrecte, acabi l'archiu amb .json");
+            interactiveConsole();
+          }
         }
         break;
       case parts[0] == "LOAD":
@@ -112,7 +117,7 @@ function interactiveConsole() {
           var array = addModule.array;
           var arrayData = [];
           var Character;
-          
+
           SaveAndLoadModule.readFile(filename, function (error,data) {
              if (error) {
                 console.log(error);
